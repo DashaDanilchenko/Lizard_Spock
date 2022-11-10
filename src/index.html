@@ -5,10 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lizard & Spock</title>
+    <link rel="stylesheet" href="https://fontawesome.com/icons?d=gallery&q=notify&m=free">
+    <script src="https://kit.fontawesome.com/52fd4b3de4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.scss">
+    <link rel="stylesheet" href="./normalize.css">
 </head>
 <body>
-    
+    <canvas id="my-canvas"></canvas>
+    <div class="game-container">
+        <div class="header">Rock Paper Scissors Lizard Spock</div>
+        <div class="player-container" id="player">
+            <h2>You - <span>0</span></h2>
+            <i class="fa-solid fa-hand-back-fist" id="rock"></i>
+            <i class="fa-solid fa-hand" id="paper"></i>
+            <i class="fa-solid fa-hand-scissors" id="scissors"></i>
+            <i class="fa-solid fa-hand-lizard" id="lizard"></i>
+            <i class="fa-solid fa-hand-spock" id="spock"></i>
+        </div>
+
+        <div class="player-container" id="computer">
+            <h2>Computer - <span>0</span></h2>
+            <i class="fa-solid fa-hand-back-fist" id="rock"></i>
+            <i class="fa-solid fa-hand" id="paper"></i>
+            <i class="fa-solid fa-hand-scissors" id="scissors"></i>
+            <i class="fa-solid fa-hand-lizard" id="lizard"></i>
+            <i class="fa-solid fa-hand-spock" id="spock"></i>
+        </div>
+
+        <i class="fa-solid fa-rotate"></i>
+
+        <div class="result-container">
+            <h2 class="result-text"></h2>
+        </div>
+    </div> 
 </body>
-    <script src="./index.js"></script>
+    <script src="./index.js" type="module"></script>
 </html>
