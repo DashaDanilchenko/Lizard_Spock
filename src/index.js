@@ -1,10 +1,16 @@
+import ConfettiGenerator from "confetti-js"
+
+var confettiSettings = { target: 'my-canvas' };
+var confetti = new ConfettiGenerator(confettiSettings);
+confetti.render();
+
 let computerChoice
 const resultText = document.querySelector('.result-text')
 
 function caseGame(choice) {
     switch (choice) {
         case 1: 
-        choice = 'rock'; break
+            choice = 'rock'; break
         case 2:
             choice = 'paper'; break 
         case 3:
@@ -35,7 +41,8 @@ function determineWinner(my, computer) {
             resultText.innerHTML = 'Won!'; break
         case 'spock'| 'scissors' || 'rock':    
             resultText.innerHTML = 'Won!'; break
-
+        default: 
+            resultText.innerHTML = 'Loss!'; break
     }
 }
 
