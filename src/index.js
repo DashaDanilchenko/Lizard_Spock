@@ -2,7 +2,6 @@ import ConfettiGenerator from "confetti-js"
 
 var confettiSettings = { target: 'my-canvas' };
 var confetti = new ConfettiGenerator(confettiSettings);
-confetti.render();
 
 let computerChoice
 const resultText = document.querySelector('.result-text')
@@ -21,7 +20,6 @@ function caseGame(choice) {
             choice = 'spock'; break
     }
     computerChoice = choice
-    console.log(computerChoice)
 }
 
 function randomChoice() {
@@ -29,28 +27,34 @@ function randomChoice() {
    caseGame(randomNum)
 }
 
-function determineWinner(my, computer) {
-    switch (my | computer) {
-        case 'rock'| 'scissors' || 'lizard': 
-            resultText.innerHTML = 'Won!'; break
-        case 'paper'| 'rock' || 'spock': 
-            resultText.innerHTML = 'Won!'; break
-        case 'scissors'| 'paper' || 'lizard': 
-            resultText.innerHTML = 'Won!'; break
-        case 'lizard'| 'spock' || 'paper':
-            resultText.innerHTML = 'Won!'; break
-        case 'spock'| 'scissors' || 'rock':    
-            resultText.innerHTML = 'Won!'; break
-        default: 
-            resultText.innerHTML = 'Loss!'; break
-    }
+function youDraw() {
+    resultText.innerHTML = 'Draw!'
+}
+
+function youWon() {
+    resultText.innerHTML = 'Won!'
+    confetti.render()
+}
+
+function youLoss() {
+    resultText.innerHTML = 'Loss!'
+}
+
+function determineWinner(gamer, computer) {
+    console.log(gamer, computer)
+    
+    gamer ===  'rock' && computer === ('scissors' || 'lizard')  ||
+    gamer === 'paper' && computer === ('rock' || 'spock') ||
+    gamer === 'scissors' && computer === ('paper' || 'lizard') ||
+    gamer === 'lizard' && computer === ('spock' || 'paper') ||
+    gamer === 'spock' && computer === ('scissors' || 'rock')? youWon(): youLoss()
 }
 
 function comparison(myChoice) {
     if (myChoice !== computerChoice) {
         determineWinner(myChoice, computerChoice)
     }if (myChoice === computerChoice){
-        resultText.innerHTML = 'Draw!' 
+        youDraw() 
     }
 }
 
