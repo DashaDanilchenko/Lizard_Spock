@@ -1,7 +1,8 @@
 import ConfettiGenerator from "confetti-js"
 
-var confettiSettings = { target: 'my-canvas' };
-var confetti = new ConfettiGenerator(confettiSettings);
+const confettiSettings = { target: 'my-canvas' };
+const confetti = new ConfettiGenerator(confettiSettings);
+const confettiId = document.querySelector('#my-canvas')
 
 const gameIcon = document.querySelectorAll('.player-container .fa-solid')
 const computerIcon = document.querySelectorAll('.player-computer .fa-solid')
@@ -57,17 +58,20 @@ function randomChoice() {
 
 function youDraw() {
     resultText.innerHTML = 'Draw!'
+    confettiId.classList.add('none')
 }
 
 function youWon() {
     resultText.innerHTML = 'Won!'
     countingPoints(markGamer)
     confetti.render()
+    confettiId.classList.remove('none')
 }
 
 function youLoss() {
     resultText.innerHTML = 'Loss!'
     countingPoints(markComputer)
+    confettiId.classList.add('none')
 }
 
 function determineWinner(gamer, computer) {

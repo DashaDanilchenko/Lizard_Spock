@@ -1,13 +1,19 @@
+#my-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .game-container {
     width: 530px;
-    height: 600px;
+    height: 470px;
     border-radius: 10px;
     box-shadow: 0 0 5px 5px gray;
     margin: 100px auto;
     .fa-rotate, div:not(:first-child) {
-        margin: 30px;
+        margin: 25px;
     }
     .header {
+        border-radius: 10px 10px 0 0;
         text-align: center;
         background: aqua;
         font-weight: 800;
@@ -32,4 +38,15 @@ i {
 
 .blue {
     color: aqua;
+}
+
+.none {
+    display: none;
+}
+
+@media (max-width:550px) {
+    .game-container {
+        width: 330px;
+        margin: 50px auto;
+        }
 }
