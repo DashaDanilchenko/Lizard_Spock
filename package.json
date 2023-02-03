@@ -19,9 +19,9 @@
   "homepage": "https://github.com/DashaDanilchenko/Lizard_Spock#readme",
   "dependencies": {
     "confetti-js": "^0.0.18",
-    "parcel": "^2.7.0"
+    "parcel": "^2.8.3"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.7.0"
+    "@parcel/transformer-sass": "^2.8.3"
   }
 }
